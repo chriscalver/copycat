@@ -120,7 +120,7 @@ function App() {
     <div className="app-container">
       <header className="header">
         <span className="kitty-logo">😸</span>
-        <h1>Copycat</h1>
+        <h1>Copycat!!!</h1>
       </header>
 
       <main className="main-content">
