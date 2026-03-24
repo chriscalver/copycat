@@ -116,6 +116,11 @@ function App() {
     }
   }
 
+  const handleClear = () => {
+    setText('')
+    setStatusMessage('Text area cleared.')
+  }
+
   return (
     <div className="app-container">
       <header className="header">
@@ -130,10 +135,15 @@ function App() {
           onChange={(e) => setText(e.target.value)}
           placeholder="Enter your text here..."
         />
-        
-        <button className="update-btn" onClick={handleUpdate} disabled={isSubmitting}>
-          {isSubmitting ? 'Updating...' : 'Update'}
-        </button>
+
+        <div className="button-row">
+          <button className="update-btn" onClick={handleUpdate} disabled={isSubmitting}>
+            {isSubmitting ? 'Updating...' : 'Update'}
+          </button>
+          <button className="clear-btn" onClick={handleClear} disabled={isSubmitting || !text}>
+            Clear
+          </button>
+        </div>
         {statusMessage && <p className="status-message">{statusMessage}</p>}
       </main>
     </div>
