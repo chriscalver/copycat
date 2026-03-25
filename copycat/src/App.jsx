@@ -121,6 +121,25 @@ function App() {
     setStatusMessage('Text area cleared.')
   }
 
+  const handleRefresh = async () => {
+    setIsSubmitting(true)
+    setStatusMessage('Refreshing...')
+    try {
+      const response = await fetch(`${apiBase}/LargeTextData`)
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`)
+      }
+      const payload = await response.json()
+      const latestText = extractLatestText(payload)
+      setText(latestText)
+      setStatusMessage(latestText ? 'Refreshed successfully.' : 'No saved text found.')
+    } catch (error) {
+      setStatusMessage(`Could not refresh: ${error.message}`)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="app-container">
       <header className="header">
@@ -142,6 +161,9 @@ function App() {
           </button>
           <button className="clear-btn" onClick={handleClear} disabled={isSubmitting || !text}>
             Clear
+          </button>
+          <button className="clear-btn" onClick={handleRefresh} disabled={isSubmitting}>
+            Refresh
           </button>
         </div>
         {statusMessage && <p className="status-message">{statusMessage}</p>}
