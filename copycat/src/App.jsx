@@ -121,6 +121,34 @@ function App() {
     setStatusMessage('Text area cleared.')
   }
 
+  const handleReadText = () => {
+    const speech = window.speechSynthesis
+
+    if (speech.speaking && !speech.paused) {
+      speech.pause()
+      setStatusMessage('Speech paused.')
+      return
+    }
+
+    if (speech.paused) {
+      speech.resume()
+      setStatusMessage('Speech resumed.')
+      return
+    }
+
+    if (!text.trim()) {
+      setStatusMessage('No text to read.')
+      return
+    }
+
+    const utterance = new SpeechSynthesisUtterance(text)
+    utterance.onend = () => {
+      setStatusMessage('Finished reading text.')
+    }
+    speech.speak(utterance)
+    setStatusMessage('Reading text...')
+  }
+
   const handleRefresh = async () => {
     setIsSubmitting(true)
     setStatusMessage('Refreshing...')
@@ -157,13 +185,16 @@ function App() {
 
         <div className="button-row">
           <button className="update-btn" onClick={handleUpdate} disabled={isSubmitting}>
-            {isSubmitting ? 'Updating...' : 'Update'}
+            {isSubmitting ? 'Updating...' : 'Save Text'}
           </button>
           <button className="clear-btn" onClick={handleClear} disabled={isSubmitting || !text}>
             Clear
           </button>
           <button className="clear-btn" onClick={handleRefresh} disabled={isSubmitting}>
             Refresh
+          </button>
+          <button className="clear-btn" onClick={handleReadText} disabled={!text}>
+            Txt to Speech
           </button>
         </div>
         {statusMessage && <p className="status-message">{statusMessage}</p>}

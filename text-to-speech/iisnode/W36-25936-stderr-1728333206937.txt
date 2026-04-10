@@ -1,0 +1,12 @@
+Application has thrown an uncaught exception and is terminated:
+ReferenceError: SpeechSynthesisUtterance is not defined
+    at Object.<anonymous> (E:\web\chriscal\projects\text-to-speech\index.js:1:76)
+    at Module._compile (module.js:635:30)
+    at Object.Module._extensions..js (module.js:646:10)
+    at Module.load (module.js:554:32)
+    at tryModuleLoad (module.js:497:12)
+    at Function.Module._load (module.js:489:3)
+    at Module.require (module.js:579:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (C:\Program Files (x86)\iisnode\interceptor.js:210:1)
+    at Module._compile (module.js:635:30)

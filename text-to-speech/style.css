@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  align-items: center;
+  
+
+}
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  background: #d3cab0;
+
+}
+.hero h1 {
+  font-size: 32px;
+  font-weight: 500;
+  /* margin-top: -50; */
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.hero h1 span {
+  color: grey;
+  font-weight: 500;
+ 
+}
+
+.row {
+  width: 370px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+}
+
+
+textarea {
+  width: 370px;
+  height: 250px;
+  padding: 20px;
+  border-radius: 15px;
+  resize: none;
+  font-size: 15px;
+  color: #fff;
+  background-color: grey;
+  margin-bottom: 10px;
+}
+
+textarea::placeholder {
+  font-size: 15px;
+  color: #fff;
+}
+
+select {
+  flex: 1;
+  height: 40px;
+  padding: 0 20px;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  border-radius: 35px;
+  background: grey;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-image: url(images/dropdown.png);
+  background-size: 10px;
+  background-position-x: calc(100% - 20px);
+  background-position-y: calc(15px);
+  font-size: 10px;
+}
+
+
+
+button {
+    background-color: #ff2963;
+    height: 40px;
+    color: #fff;
+    font-size: 15;
+    padding: 10px 30px;
+    border-radius: 35px;
+    border: 0;
+    outline: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  button img {
+    width: 14px;
+    margin-right: 10px;
+    
+  }

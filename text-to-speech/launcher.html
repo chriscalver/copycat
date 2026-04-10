@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Launcher</title>
+  <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="launcher.css">
+  </head>
+
+<body>
+  <header id="header">
+
+    <div class="logo">
+      <a href="" rel="home" title="Bootstrap Templates | Premium & Free Download" title="Back to BootstrapMade Homepage"><img alt="BootstrapMade" src="logo.gif"></a>
+    </div>
+    <div class="preview-devices">
+      <ul>
+        <li class="preview-test preview-devices-active" id="preview-test-desktop" title="Desktop Preview"><a href="">
+          <img id="pc" alt="BootstrapMade" src="pc2.gif" onclick="pc()"></a>
+        </a></li>
+        <li class="preview-test" id="preview-test-tablet" title="Tablet Preview"><a href="">
+          <img id="tablet" alt="BootstrapMade" src="tablet.gif" onclick="tablet()">
+        </a></li>
+        <li class="preview-test" id="preview-test-mobile" title="Mobile Preview"><a href="">
+          <img id="phone" alt="BootstrapMade" src="phone.gif" width=18px onclick="phone()">
+        </a></li>
+        
+        <li class="preview-test2" id="device" title="Mobile Preview">
+          Desktop View</li>
+      </ul>
+    </div>
+
+    <script>
+      function pc() {
+        document.getElementById("pc").src = "pc2.gif"; 
+        document.getElementById("tablet").src = "tablet.gif";        
+        document.getElementById("phone").src = "phone.gif"; 
+        document.getElementById("device").innerHTML = "Desktop View";            
+        
+      }
+      function tablet() {
+        document.getElementById("pc").src = "pc.gif"; 
+        document.getElementById("tablet").src = "tablet2.gif";        
+        document.getElementById("phone").src = "phone.gif";    
+        document.getElementById("device").innerHTML = "Tablet View";  
+      }
+      function phone() {
+        document.getElementById("pc").src = "pc.gif"; 
+        document.getElementById("tablet").src = "tablet.gif";        
+        document.getElementById("phone").src = "phone2.gif";  
+        document.getElementById("device").innerHTML = "Phone View";  
+      }
+      
+      </script>
+    
+    <div class="navigate">
+      
+      <a class="download" href="http://chriscalver.com" title="check me out" target="_blank"><span>chriscalver.com</span></a>
+    </div>
+
+  </header>
+
+
+  <div id="preview">
+    <iframe id="preview-frame" class="preview-desktop" src="index.html" frameborder="0"></iframe>
+  </div>
+
+      <script src="https://bootstrapmade.com/assets/js/demo.js?v=5.0"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7JSYB1CSP"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-P7JSYB1CSP');</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7e73711c6ab1a238","token":"68c5ca450bae485a842ff76066d69420","version":"2023.4.0","si":100}' crossorigin="anonymous"></script>
+</body>
+
+</html>
